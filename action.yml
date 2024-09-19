@@ -2,7 +2,7 @@ name: "davidkhala/setup-rust"
 
 branding:
   icon: 'package'
-  color: 'brown'
+  color: 'orange'
 description: Setup Rust environment
 runs:
   using: "composite"
