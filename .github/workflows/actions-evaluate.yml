@@ -1,0 +1,28 @@
+on: push
+jobs:
+  moonrepo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: moonrepo/setup-rust@v1
+
+  actions-rust-lang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-rust-lang/setup-rust-toolchain@main
+
+
+  sfackler:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+    runs-on: ${matrix.os}
+    steps:
+      - uses: sfackler/actions/rustup@master
+
+  dtolnay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+
