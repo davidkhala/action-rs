@@ -10,6 +10,15 @@ jobs:
     steps:
       - uses: actions-rust-lang/setup-rust-toolchain@main
 
+  self:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+    runs-on: ${matrix.os}
+    steps:
+      - name: davidkhala/setup-rust
+        uses: davidkhala/setup-rs@main
+            
 
   sfackler:
     strategy:
